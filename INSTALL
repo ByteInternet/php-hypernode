@@ -1,0 +1,23 @@
+INSTALLATION INSTRUCTIONS
+=========================
+
+
+DYNAMIC MODULE
+--------------
+
+        phpize
+        ./configure && make
+        make install  (as root)
+
+
+STATIC COMPILATION
+------------------
+
+Place sources in /path/to/php_sources/ext/hypernode.
+
+        cd /path/to/php_sources
+        autoconf
+        ./configure --enable-hypernode
+
+Now just build and install php.
+
