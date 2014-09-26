@@ -28,7 +28,7 @@
 #include "php_hypernode.h"
 
 #include "SAPI.h"
-#include "sapi/fpm/fpm/fastcgi.h"
+#include "fastcgi.h"
 
 #include <netinet/tcp.h>
 #include <netinet/in.h>
