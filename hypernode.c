@@ -120,7 +120,10 @@ PHP_RINIT_FUNCTION(hypernode)
 
 	struct tcp_info tcp_info;
 	int tcp_info_length = sizeof(tcp_info);
-	getsockopt(request->fd, IPPROTO_TCP, TCP_INFO, (void*)&tcp_info, (socklen_t*)&tcp_info_length);
+	if (getsockopt(request->fd, IPPROTO_TCP, TCP_INFO, (void*)&tcp_info, (socklen_t*)&tcp_info_length)) {
+		return SUCCESS;
+	}
+
 	if (tcp_info.tcpi_state == TCP_CLOSE_WAIT) {
 		// By clearing the request method, the request will be terminated in fpm_main.c
 		SG(request_info).request_method = NULL;
