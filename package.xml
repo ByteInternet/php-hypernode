@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<package packagerversion="1.9.4" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>hypernode</name>
+ <channel>pecl.php.net</channel>
+ <summary>PHP extension that checks for existence of a client</summary>
+ <description>This extension will check whether a client has already closed the connection, before starting the request.</description>
+ <lead>
+  <name>Maarten van Schaik</name>
+  <user/>
+  <email/>
+  <active/>
+ </lead>
+ <date>2014-10-01</date>
+ <time>14:52:41</time>
+ <version>
+  <release>20141001.145241</release>
+  <api>20141001.145241</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.php.net/license">PHP</license>
+ <notes>
+php5-hypernode 20141001.145241
+ </notes>
+ <contents>
+  <dir name="/">
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.3.0</min>
+    <max>6.0.0</max>
+    <exclude>6.0.0</exclude>
+   </php>
+   <pearinstaller>
+    <min>1.4</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <providesextension>hypernode</providesextension>
+ <extsrcrelease />
+</package>
