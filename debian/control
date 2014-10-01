@@ -1,0 +1,20 @@
+Source: php5-hypernode
+Section: php
+Priority: optional
+Maintainer: Maarten van Schaik <maarten@byte.nl>
+Build-Depends:
+  debhelper (>= 9),
+  php5-dev,
+  php5-dev-5.5-buildscripts,
+  pkg-php-tools (>= 1.11)
+Standards-Version: 3.9.5
+Vcs-Git: git@github.com:ByteInternet/php5-hypernode.git
+Vcs-Browser: https://github.com/ByteInternet/php5-hypernode
+
+Package: php5-hypernode
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${php:Depends}
+Recommends: ${phppear:Debian-Recommends}
+Breaks: ${phppear:Debian-Breaks}
+Description: ${phppear:summary}
+ ${phppear:description}
