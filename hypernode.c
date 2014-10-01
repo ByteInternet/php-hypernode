@@ -26,12 +26,15 @@
 #include "php_ini.h"
 #include "ext/standard/info.h"
 #include "php_hypernode.h"
+#include "main/php_syslog.h"
 
 #include "SAPI.h"
 #include "fastcgi.h"
 
 #include <netinet/tcp.h>
 #include <netinet/in.h>
+#include <syslog.h>
+
 
 ZEND_DECLARE_MODULE_GLOBALS(hypernode)
 
@@ -121,10 +124,28 @@ PHP_RINIT_FUNCTION(hypernode)
 	struct tcp_info tcp_info;
 	int tcp_info_length = sizeof(tcp_info);
 	if (getsockopt(request->fd, IPPROTO_TCP, TCP_INFO, (void*)&tcp_info, (socklen_t*)&tcp_info_length)) {
+		php_syslog(LOG_ERR, "Error determining socket status!");
 		return SUCCESS;
 	}
 
 	if (tcp_info.tcpi_state == TCP_CLOSE_WAIT) {
+		char *http_host, *remote_addr;
+
+		// sapi_getenv will emalloc
+		http_host = sapi_getenv("HTTP_HOST", strlen("HTTP_HOST") TSRMLS_CC);
+		remote_addr = sapi_getenv("REMOTE_ADDR", strlen("REMOTE_ADDR") TSRMLS_CC);
+
+		php_syslog(LOG_NOTICE, "Terminated request %s %s%s%s%s because client at %s is already gone",
+				SG(request_info).request_method,
+				http_host ? http_host : "-",
+				SG(request_info).request_uri,
+				(strlen(SG(request_info).query_string) > 0) ? "?" : "",
+				SG(request_info).query_string,
+				remote_addr ? remote_addr : "-");
+
+		if (http_host) efree(http_host);
+		if (remote_addr) efree(remote_addr);
+
 		// By clearing the request method, the request will be terminated in fpm_main.c
 		SG(request_info).request_method = NULL;
 	}
