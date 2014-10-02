@@ -21,3 +21,50 @@ called `.user.ini` in it with the following contents:
 ```
 hypernode.kill_gone_requests = 0
 ```
+
+
+BUILD INSTRUCTIONS
+==================
+The buildsystem for this module uses debhelper scripts that are only available for Ubuntu 14.04 (trusty) and later. We still use 12.04 (precise) on Hypernode. If you need to build this module for precies, you need two additional dependencies: [php5-dev-5.5-buildscripts](https://github.com/ByteInternet/php5-dev-5.5-buildscripts) and [pkg-php-tools](http://packages.ubuntu.com/trusty/pkg-php-tools) from Ubuntu 14.04. Both packages are available in the Hypernode Precise repository. You also need to have the same major version of php5-dev installed as this module will be used with.
+
+Make sure you have a build environment set up for the target system. You can use instructions from [the wiki](https://wiki.byte.nl/mediawiki/Git-buildpackage_%28handmatig%29#Pbuilder_omgeving_voor_ubuntu_precise_.2812.04_LTS.29_maken_.28op_Debian_of_op_Ubuntu.29). **Make sure to enable the Hypernode repository** (deb http://ubuntu.byte.nl precise main hypernode php54).
+
+Then:
+`git-buildpackage --git-pbuilder --git-dist=precise --git-arch=amd64 --git-debian-branch=master`
+
+
+CREATING A NEW VERSION
+======================
+1. VERSION=$(date "+%Y%m%d.%H%M%S")
+1. Update the version in package.xml
+1. `ln -s src/ $VERSION`
+1. `git-dch --debian-tag="%(version)s" --new-version=$VERSION --debian-branch master --release`
+1. `git add package.xml $VERSION debian/changelog`
+1. `git commit -m "Update changelog for $VERSION release"`
+1. `git tag $VERSION`
+1. `git push && git push --tags`
+1. `git-buildpackage --git-pbuilder --git-dist=precise --git-arch=amd64 --git-debian-branch=master`
+
+
+MANUAL BUILD AND INSTALLATION INSTRUCTIONS
+==========================================
+
+DYNAMIC MODULE
+--------------
+
+        phpize
+        ./configure && make
+        make install  (as root)
+
+
+STATIC COMPILATION
+------------------
+
+Place sources in /path/to/php_sources/ext/hypernode.
+
+        cd /path/to/php_sources
+        autoconf
+        ./configure --enable-hypernode
+
+Now just build and install php.
+
