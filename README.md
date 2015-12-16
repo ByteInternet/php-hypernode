@@ -23,14 +23,32 @@ hypernode.kill_gone_requests = 0
 ```
 
 
-BUILD INSTRUCTIONS
-==================
+# BUILD INSTRUCTIONS
 The buildsystem for this module uses debhelper scripts that are only available for Ubuntu 14.04 (trusty) and later. We still use 12.04 (precise) on Hypernode. If you need to build this module for precies, you need two additional dependencies: [php5-dev-5.5-buildscripts](https://github.com/ByteInternet/php5-dev-5.5-buildscripts) and [pkg-php-tools](http://packages.ubuntu.com/trusty/pkg-php-tools) from Ubuntu 14.04. Both packages are available in the Hypernode Precise repository. You also need to have the same major version of php5-dev installed as this module will be used with.
 
-Make sure you have a build environment set up for the target system. You can use instructions from [the wiki](https://wiki.byte.nl/mediawiki/Git-buildpackage_%28handmatig%29#Pbuilder_omgeving_voor_ubuntu_precise_.2812.04_LTS.29_maken_.28op_Debian_of_op_Ubuntu.29). **Make sure to enable the Hypernode repository** (deb http://ubuntu.byte.nl precise main hypernode php54).
+Make sure you have a build environment set up for the target system. You can use instructions from [the wiki](https://wiki.byte.nl/mediawiki/Git-buildpackage_%28handmatig%29#Pbuilder_omgeving_voor_ubuntu_precise_.2812.04_LTS.29_maken_.28op_Debian_of_op_Ubuntu.29).
 
-Then:
-`git-buildpackage --git-pbuilder --git-dist=precise --git-arch=amd64 --git-debian-branch=master`
+**Build the package for each phpapi we support!** See below:
+
+## PHP 5.4
+
+ * Enable the Hypernode repository with the **5.4** component
+  * export DIST=precise ARCH=amd64
+  * `git-pbuilder login --save-after-login`
+  * `echo "deb http://ubuntu.byte.nl precise main hypernode php54" > /etc/apt/sources.list`
+  * `git-pbuilder update`
+ * Build: `git-buildpackage --git-pbuilder --git-dist=$DIST --git-arch=$ARCH --git-debian-branch=master`
+ * Upload: `dput -c dput-php5-hypernode.cf --unchecked hypernode-precise-php54 ../php5-hypernode_$(dpkg-parsechangelog --show-field version --count 1)_amd64.changes`
+
+## PHP 5.5
+
+ * Enable the Hypernode repository with the **5.5** component
+  * export DIST=precise ARCH=amd64
+  * `git-pbuilder login --save-after-login`
+  * `echo "deb http://ubuntu.byte.nl precise main hypernode php55" > /etc/apt/sources.list`
+  * `git-pbuilder update`
+ * Build: `git-buildpackage --git-pbuilder --git-dist=$DIST --git-arch=$ARCH --git-debian-branch=master`
+ * Upload: `dput -c dput-php5-hypernode.cf --unchecked hypernode-precise-php55 ../php5-hypernode_$(dpkg-parsechangelog --show-field version --count 1)_amd64.changes`
 
 
 CREATING A NEW VERSION
