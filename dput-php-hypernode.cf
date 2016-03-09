@@ -13,3 +13,11 @@ login=root
 incoming=/srv/ubuntu/incoming/precise
 pre_upload_command=ssh root@debian1.c1.internal "/srv/ubuntu/clean_incoming.sh"
 post_upload_command=ssh root@debian1.c1.internal "cd /srv/ubuntu && reprepro --ignore=wrongdistribution --component php55 include precise incoming/precise/*.changes && /srv/ubuntu/clean_incoming.sh"
+
+[hypernode-precise-php70]
+method=scp
+fqdn=debian1.c1.internal
+login=root
+incoming=/srv/ubuntu/incoming/precise
+pre_upload_command=ssh root@debian1.c1.internal "/srv/ubuntu/clean_incoming.sh"
+post_upload_command=ssh root@debian1.c1.internal "cd /srv/ubuntu && reprepro --ignore=wrongdistribution --component php7.0 include precise incoming/precise/*.changes && /srv/ubuntu/clean_incoming.sh"
