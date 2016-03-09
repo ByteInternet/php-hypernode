@@ -12,7 +12,7 @@ INSTALL_ROOT := $(CURDIR)/debian/php-$(PECL_NAME)
 ## Does not work on precise, which has older PHP packaging that
 ## does not support /usr/lib/php/php{7.0,5} and such.
 # PHP_VERSIONS := $(shell /usr/sbin/phpquery -V)
-PHP_VERSIONS := 5
+PHP_VERSIONS := 7.0
 
 CONFIGURE_TARGETS := $(addprefix configure-,$(addsuffix -stamp,$(PHP_VERSIONS)))
 BUILD_TARGETS     := $(addprefix build-,$(addsuffix -stamp,$(PHP_VERSIONS)))
