@@ -16,3 +16,7 @@ Architecture: any
 Depends: ${misc:Depends},
          ${php:Depends},
          ${shlibs:Depends}
+Description: PHP extension for closing hanging connections on Hypernode
+ This extension makes PHP FPM close connections for clients that have
+ already closed their connection to Nginx. This is to prevent the FPM
+ queue from clogging and/or doing unnecessary work.
