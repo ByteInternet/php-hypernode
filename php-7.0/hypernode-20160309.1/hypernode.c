@@ -29,7 +29,7 @@
 #include "main/php_syslog.h"
 
 #include "SAPI.h"
-#include "fastcgi.c"
+#include "fastcgi.h"
 
 #include <netinet/tcp.h>
 #include <netinet/in.h>
