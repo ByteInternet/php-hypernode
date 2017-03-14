@@ -6,7 +6,7 @@ Build-Depends:
   debhelper (>= 9),
   dh-php (>= 0.10),
   php-common,
-  php5-dev
+  php5.5-dev
 Standards-Version: 3.9.5
 Vcs-Git: git@github.com:ByteInternet/php-hypernode.git
 Vcs-Browser: https://github.com/ByteInternet/php-hypernode
