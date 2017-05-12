@@ -1,8 +1,13 @@
-php-hypernode (20160309.1) UNRELEASED; urgency=medium
+php-hypernode (20170512.115553) xenial; urgency=medium
 
+  [ Allard ]
   * Rename source to php-hypernode
 
- -- Allard <allard@allard.r139.net>  Wed, 09 Mar 2016 13:15:40 +0100
+  [ Rick van de Loo ]
+  * Make compatible with PHP7
+  * Packaging can build PHP5 and PHP7
+
+ -- Rick van de Loo <vdloo@workstation4>  Fri, 12 May 2017 11:56:38 +0200
 
 php5-hypernode (20141001.145241) precise; urgency=medium
 
