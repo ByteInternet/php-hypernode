@@ -29,7 +29,11 @@
 #include "main/php_syslog.h"
 
 #include "SAPI.h"
-#include "fastcgi.h"
+#if PHP_MAJOR_VERSION < 7
+#include "fastcgi_php55.h"
+#else
+#include "fastcgi_php70.h"
+#endif
 
 #include <netinet/tcp.h>
 #include <netinet/in.h>
@@ -175,3 +179,4 @@ PHP_MINFO_FUNCTION(hypernode)
  * vim600: noet sw=4 ts=4 fdm=marker
  * vim<600: noet sw=4 ts=4
  */
+
