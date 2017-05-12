@@ -32,18 +32,6 @@ Make sure you have a build environment set up for the target system. You can use
 
 **Build the package for each phpapi we support!** See below:
 
-## PHP 5.4
-
- * Enable the Hypernode repository with the **5.4** component
-  * export DIST=precise ARCH=amd64
-  * `git-pbuilder login --save-after-login`
-  * `echo "deb http://ubuntu.byte.nl precise main hypernode php54" > /etc/apt/sources.list`
-  * `git-pbuilder update`
- * Build: `git-buildpackage --git-pbuilder --git-dist=$DIST --git-arch=$ARCH --git-debian-branch=master`
- * Upload: `dput -c dput-php-hypernode.cf --unchecked hypernode-precise-php54 ../php5-hypernode_$(dpkg-parsechangelog --show-field version --count 1)_amd64.changes`
-
-## PHP 5.5
-
  * Enable the Hypernode repository with the **5.5** component
   * export DIST=precise ARCH=amd64
   * `git-pbuilder login --save-after-login`
@@ -56,10 +44,8 @@ Make sure you have a build environment set up for the target system. You can use
 CREATING A NEW VERSION
 ======================
 1. VERSION=$(date "+%Y%m%d.%H%M%S")
-1. Update the version in package.xml
 1. `ln -s src/ $VERSION`
 1. `git-dch --debian-tag="%(version)s" --new-version=$VERSION --debian-branch master --release`
-1. `git add package.xml $VERSION debian/changelog`
 1. `git commit -m "Update changelog for $VERSION release"`
 1. `git tag $VERSION`
 1. `git push && git push --tags`
