@@ -1,3 +1,9 @@
+php-hypernode (20170512.125015) xenial; urgency=medium
+
+  * update build instructions
+
+ -- Rick van de Loo <vdloo@workstation4>  Fri, 12 May 2017 12:50:24 +0200
+
 php-hypernode (20170512.115553) xenial; urgency=medium
 
   [ Allard ]
