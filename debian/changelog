@@ -1,3 +1,9 @@
+php-hypernode (20170815.114844) xenial; urgency=medium
+
+  * Bump version so we can build for php5.6
+
+ -- Daniel Genis <daniel@byte.nl>  Tue, 15 Aug 2017 11:49:38 +0200
+
 php-hypernode (20170512.125015) xenial; urgency=medium
 
   * update build instructions
