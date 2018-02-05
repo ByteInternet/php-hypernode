@@ -38,7 +38,7 @@ Make sure you have a build environment set up for the target system. You can use
   * `echo "deb http://ubuntu.byte.nl precise main hypernode php55" > /etc/apt/sources.list`
   * `git-pbuilder update`
  * Build: `git-buildpackage --git-pbuilder --git-dist=$DIST --git-arch=$ARCH --git-debian-branch=master`
- * Upload: `dput -c dput-php-hypernode.cf --unchecked hypernode-precise-php55 ../php5-hypernode_$(dpkg-parsechangelog --show-field version --count 1)_amd64.changes`
+ * Upload: See #hyperspam for reprerpo instructions. Make sure you put it in the correct apt component.
 
 
 CREATING A NEW VERSION
