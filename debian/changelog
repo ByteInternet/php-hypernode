@@ -1,3 +1,9 @@
+php-hypernode (20180208.131823) xenial; urgency=medium
+
+  * Bump version so we can build for php7.1
+
+ -- Rick van de Loo <vdloo@workstation4>  Thu, 08 Feb 2018 13:18:52 +0100
+
 php-hypernode (20170815.114844) xenial; urgency=medium
 
   * Bump version so we can build for php5.6
