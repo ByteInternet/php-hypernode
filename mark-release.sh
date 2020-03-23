@@ -137,7 +137,7 @@ if $COMMIT; then
 
     if $PUSH; then
         log "pushing changes to origin ..."
-        git push origin master:HEAD
+        git push origin HEAD:master
         if $TAG; then
             git push origin $VERSION
         fi
