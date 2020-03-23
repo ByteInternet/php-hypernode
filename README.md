@@ -24,22 +24,11 @@ hypernode.kill_gone_requests = 0
 
 
 # BUILD INSTRUCTIONS
-The buildsystem for this module uses debhelper scripts that are only available for Ubuntu 14.04 (trusty) and later. We still use 12.04 (precise) on Hypernode. If you need to build this module for precies, you need two additional dependencies: [php5-dev-5.5-buildscripts](https://github.com/ByteInternet/php5-dev-5.5-buildscripts) and [pkg-php-tools](http://packages.ubuntu.com/trusty/pkg-php-tools) from Ubuntu 14.04. Both packages are available in the Hypernode Precise repository. You also need to have the same major version of php5-dev installed as this module will be used with.
+The buildsystem for this module uses debhelper scripts that are only available for Ubuntu 14.04 (trusty) and later. If you need to build this module for Ubuntu Precise, you need two additional dependencies: [php5-dev-5.5-buildscripts](https://github.com/ByteInternet/php5-dev-5.5-buildscripts) and [pkg-php-tools](http://packages.ubuntu.com/trusty/pkg-php-tools) from Ubuntu 14.04. Both packages are available in the Hypernode Precise repository. You also need to have the same major version of php5-dev installed as this module will be used with.
 
 You also need `dh-php` > 0.10, so download here: http://ftp.nl.debian.org/debian/pool/main/d/dh-php/dh-php_0.10_all.deb
 
-Make sure you have a build environment set up for the target system. You can use instructions from [the wiki](https://wiki.byte.nl/mediawiki/Git-buildpackage_%28handmatig%29#Pbuilder_omgeving_voor_ubuntu_precise_.2812.04_LTS.29_maken_.28op_Debian_of_op_Ubuntu.29).
-
-**Build the package for each phpapi we support!** See below:
-
- * Enable the Hypernode repository with the **5.5** component
-  * export DIST=precise ARCH=amd64
-  * `git-pbuilder login --save-after-login`
-  * `echo "deb http://ubuntu.byte.nl precise main hypernode php55" > /etc/apt/sources.list`
-  * `git-pbuilder update`
- * Build: `git-buildpackage --git-pbuilder --git-dist=$DIST --git-arch=$ARCH --git-debian-branch=master`
- * Upload: See #hyperspam for reprerpo instructions. Make sure you put it in the correct apt component.
-
+Make sure you have a build environment set up for the target system.
 
 CREATING A NEW VERSION
 ======================
@@ -49,7 +38,9 @@ CREATING A NEW VERSION
 1. `git commit -m "Update changelog for $VERSION release"`
 1. `git tag $VERSION`
 1. `git push && git push --tags`
-1. `git-buildpackage --git-pbuilder --git-dist=precise --git-arch=amd64 --git-debian-branch=master`
+1. `git-buildpackage --git-pbuilder --git-dist=buster --git-arch=amd64 --git-debian-branch=master`
+
+Or for the fully automated version see ByteInternet/hypernode-buildscripts
 
 
 MANUAL BUILD AND INSTALLATION INSTRUCTIONS
