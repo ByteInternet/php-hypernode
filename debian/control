@@ -5,8 +5,11 @@ Maintainer: Maarten van Schaik <maarten@byte.nl>
 Build-Depends:
   debhelper (>= 9),
   dh-php (>= 0.10),
-  php-common,
-  php5.5-dev
+  php5.6-dev,
+  php7.0-dev,
+  php7.1-dev,
+  php7.2-dev,
+  php7.3-dev
 Standards-Version: 3.9.5
 Vcs-Git: git@github.com:ByteInternet/php-hypernode.git
 Vcs-Browser: https://github.com/ByteInternet/php-hypernode
