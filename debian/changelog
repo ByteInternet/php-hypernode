@@ -1,3 +1,14 @@
+php-hypernode (20200323.144449) UNRELEASED; urgency=medium
+
+  [ Rick van de Loo ]
+  * update changelog for php7.3
+  * update control file for buster
+  * add mark release script
+  * update the README somewhat
+  * update maintainer
+
+ -- Hypernode team <hypernode@byte.nl>  Mon, 23 Mar 2020 14:44:50 +0000
+
 php-hypernode (20191010.135112) xenial; urgency=medium
 
   * Bump version so we can build for php7.3
