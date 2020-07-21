@@ -1,3 +1,11 @@
+php-hypernode (20200721.074350) UNRELEASED; urgency=medium
+
+  [ Rick van de Loo ]
+  * update changelog for php7.4
+  * Bump version so we can build for php7.4
+
+ -- Hypernode team <hypernode@byte.nl>  Tue, 21 Jul 2020 07:43:50 +0000
+
 php-hypernode (20200323.144449) UNRELEASED; urgency=medium
 
   [ Rick van de Loo ]
