@@ -136,8 +136,13 @@ PHP_RINIT_FUNCTION(hypernode)
 		char *http_host, *remote_addr;
 
 		// sapi_getenv will emalloc
+#if PHP_MAJOR_VERSION < 7
 		http_host = sapi_getenv("HTTP_HOST", strlen("HTTP_HOST") TSRMLS_CC);
 		remote_addr = sapi_getenv("REMOTE_ADDR", strlen("REMOTE_ADDR") TSRMLS_CC);
+#else
+		http_host = sapi_getenv("HTTP_HOST", strlen("HTTP_HOST"));
+		remote_addr = sapi_getenv("REMOTE_ADDR", strlen("REMOTE_ADDR"));
+#endif
 
 		php_syslog(LOG_NOTICE, "Terminated request %s %s%s%s%s because client at %s is already gone",
 				SG(request_info).request_method,
