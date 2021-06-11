@@ -1,3 +1,12 @@
+php-hypernode (20210611.132200) UNRELEASED; urgency=medium
+
+  [ Rick van de Loo ]
+  * update changelog for php8.0
+  * do not use TSRMLS_CC for PHP 8.0 build
+  * Bump version so we can build for php8.0
+
+ -- Hypernode team <hypernode@byte.nl>  Tue, 13 Jun 2021 13:22:00 +0000
+
 php-hypernode (20200721.074350) UNRELEASED; urgency=medium
 
   [ Rick van de Loo ]
