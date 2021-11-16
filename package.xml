@@ -32,7 +32,7 @@ php-hypernode 220160309.1
   <required>
    <php>
     <min>5.3.0</min>
-    <max>8.1.0</max>
+    <max>8.2.0</max>
     <exclude>6.0.0</exclude>
    </php>
    <pearinstaller>
