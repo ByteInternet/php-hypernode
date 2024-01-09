@@ -13,7 +13,8 @@ Build-Depends:
   php7.4-dev,
   php8.0-dev,
   php8.1-dev,
-  php8.2-dev
+  php8.2-dev,
+  php8.3-dev
 Standards-Version: 3.9.5
 Vcs-Git: git@github.com:ByteInternet/php-hypernode.git
 Vcs-Browser: https://github.com/ByteInternet/php-hypernode
