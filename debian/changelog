@@ -1,4 +1,4 @@
-php-hypernode (20230210.093330) UNRELEASED; urgency=medium
+php-hypernode (20240115.112824) UNRELEASED; urgency=medium
 
   [ Rick van de Loo ]
   * update changelog for php8.0
@@ -12,7 +12,11 @@ php-hypernode (20230210.093330) UNRELEASED; urgency=medium
   [ Timon de Groot ]
   * Allow building php-hypernode for php 8.2
 
- -- Hypernode team <hypernode@byte.nl>  Fri, 10 Feb 2023 09:33:30 +0100
+  [ Hritik Kothari ]
+  * Allow building php8.3
+  * Update package.xml to max 8.4
+
+ -- Hypernode team <hypernode@byte.nl>  Mon, 15 Jan 2024 11:28:25 +0100
 
 php-hypernode (20200721.074350) UNRELEASED; urgency=medium
 
