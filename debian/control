@@ -1,10 +1,10 @@
 Source: php-hypernode
 Section: php
 Priority: optional
-Maintainer: Rick van de Loo <rick@byte.nl>
+Maintainer: Hypernode Tech Team <tech.team@hypernode.com>
 Build-Depends:
-  debhelper (>= 9),
-  dh-php (>= 0.10),
+  debhelper (>= 10~),
+  dh-php (>= 4~),
   php5.6-dev,
   php7.0-dev,
   php7.1-dev,
@@ -15,7 +15,7 @@ Build-Depends:
   php8.1-dev,
   php8.2-dev,
   php8.3-dev
-Standards-Version: 3.9.5
+Standards-Version: 4.5.1
 Vcs-Git: git@github.com:ByteInternet/php-hypernode.git
 Vcs-Browser: https://github.com/ByteInternet/php-hypernode
 
