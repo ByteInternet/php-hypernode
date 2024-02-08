@@ -21,9 +21,16 @@ Vcs-Browser: https://github.com/ByteInternet/php-hypernode
 
 Package: php-hypernode
 Architecture: any
+Pre-Depends: php-common (>= 2:69~)
 Depends: ${misc:Depends},
+         ${pecl:Depends},
          ${php:Depends},
          ${shlibs:Depends}
+Breaks: ${pecl:Breaks}
+Replaces: ${pecl:Replaces}
+Provides: ${pecl:Provides},
+          ${php:Provides}
+Suggests: ${pecl:Suggests}
 Description: PHP extension for closing hanging connections on Hypernode
  This extension makes PHP FPM close connections for clients that have
  already closed their connection to Nginx. This is to prevent the FPM
