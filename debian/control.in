@@ -1,0 +1,30 @@
+Source: php-hypernode
+Section: php
+Priority: optional
+Maintainer: Rick van de Loo <rick@byte.nl>
+Build-Depends:
+  debhelper (>= 9),
+  dh-php (>= 0.10),
+  php5.6-dev,
+  php7.0-dev,
+  php7.1-dev,
+  php7.2-dev,
+  php7.3-dev,
+  php7.4-dev,
+  php8.0-dev,
+  php8.1-dev,
+  php8.2-dev,
+  php8.3-dev
+Standards-Version: 3.9.5
+Vcs-Git: git@github.com:ByteInternet/php-hypernode.git
+Vcs-Browser: https://github.com/ByteInternet/php-hypernode
+
+Package: php-hypernode
+Architecture: any
+Depends: ${misc:Depends},
+         ${php:Depends},
+         ${shlibs:Depends}
+Description: PHP extension for closing hanging connections on Hypernode
+ This extension makes PHP FPM close connections for clients that have
+ already closed their connection to Nginx. This is to prevent the FPM
+ queue from clogging and/or doing unnecessary work.
