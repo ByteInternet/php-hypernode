@@ -1,4 +1,4 @@
-php-hypernode (20241213.151404) UNRELEASED; urgency=medium
+php-hypernode (20251218.111530) UNRELEASED; urgency=medium
 
   [ Rick van de Loo ]
   * update changelog for php8.0
@@ -22,8 +22,10 @@ php-hypernode (20241213.151404) UNRELEASED; urgency=medium
   * debian: Bump compat level to 10
   * debian: Update control pecl fields to new standards
   * Add support for PHP 8.4
+  * Add support for PHP 8.5
+  * Add support for PHP 8.5
 
- -- Hypernode team <hypernode@byte.nl>  Fri, 13 Dec 2024 15:14:05 +0100
+ -- Hypernode team <hypernode@byte.nl>  Thu, 18 Dec 2025 11:15:30 +0100
 
 php-hypernode (20200721.074350) UNRELEASED; urgency=medium
 
